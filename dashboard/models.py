@@ -6,11 +6,11 @@ from django.template import defaultfilters
 
 class UserProfile(models.Model):
     # необходимое поле для связки со встроенной моделью юзера Django
-    user		= models.OneToOneField(User)
+    user        = models.OneToOneField(User)
     # наши добавляемые поля
-    sex			= models.CharField(blank=True, max_length=6)
-    birthday	= models.DateField(blank=True, null=True)
-    city		= models.TextField(blank=True)
+    sex         = models.CharField(blank=True, max_length=6)
+    birthday    = models.DateField(blank=True, null=True)
+    city        = models.TextField(blank=True)
 
     def age(self):
         today = date.today()
@@ -23,20 +23,20 @@ class UserProfile(models.Model):
 
     def json(self):
         return {
-            'name':			self.user.first_name,
-            'surname':		self.user.last_name,
-            'sex':			self.sex,
-            'birthdate':	self.birthday,
-            'age':			self.age(),
-            'city':			self.city,
+            'name':         self.user.first_name,
+            'surname':      self.user.last_name,
+            'sex':          self.sex,
+            'birthdate':    self.birthday,
+            'age':          self.age(),
+            'city':         self.city,
         }
 
 class Widget(models.Model):
-    user		= models.ForeignKey('auth.User')
-    message		= models.TextField()
-    color		= models.CharField(blank=True, max_length=12, default='primary')
-    image		= models.CharField(blank=True, max_length=256)
-    position	= models.IntegerField(default=0)
+    user        = models.ForeignKey('auth.User')
+    message     = models.TextField()
+    color       = models.CharField(blank=True, max_length=12, default='primary')
+    image       = models.CharField(blank=True, max_length=256)
+    position    = models.IntegerField(default=0)
     create_date = models.DateTimeField(default=timezone.now)
     modify_date = models.DateTimeField(default=timezone.now)
 
@@ -49,10 +49,10 @@ class Widget(models.Model):
 
     def json(self):
         return {
-            'id':		self.pk,
-            'message':	self.message,
-            'color':	self.color,
-            'image':	self.image,
-            'created':	defaultfilters.date(self.create_date, 'd b, H:i'),
-            'modified':	defaultfilters.date(self.modify_date, 'd b, H:i'),
+            'id':       self.pk,
+            'message':  self.message,
+            'color':    self.color,
+            'image':    self.image,
+            'created':  defaultfilters.date(self.create_date, 'd b, H:i'),
+            'modified': defaultfilters.date(self.modify_date, 'd b, H:i'),
         }

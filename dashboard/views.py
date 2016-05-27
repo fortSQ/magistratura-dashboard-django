@@ -23,13 +23,13 @@ def settings(request):
     if request.method == 'POST':
         post = request.POST
         user = User.objects.get(username=request.user.username)
-        user.first_name	= post['name']
-        user.last_name	= post['surname']
+        user.first_name = post['name']
+        user.last_name  = post['surname']
         user.save()
         user_profile = user.userprofile
-        user_profile.birthday	= parse_date(post['birthdate'])
-        user_profile.sex		= post['sex']
-        user_profile.city		= post['city']
+        user_profile.birthday   = parse_date(post['birthdate'])
+        user_profile.sex        = post['sex']
+        user_profile.city       = post['city']
         user_profile.save()
         response = user_profile.json()
     return JsonResponse(response)
