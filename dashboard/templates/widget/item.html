@@ -1,20 +1,20 @@
 <div data-id="{{ widget.pk }}" id="sort-{{ widget.pk }}" class="card">
-	<img src="{{ widget.image }}" class="card-img-top img-fluid"/>
-	<div class="card-block card-inverse text-xs-center card-{{ widget.color }}">
-		<blockquote class="card-blockquote">
-			{{ widget.message|linebreaks }}
-			<footer class="text-xs-left">
-				<small>
-					<cite title="Дата публикации">
-						{{ widget.create_date|date:'d b, H:i' }}
-						{% if widget.modify_date|date:'d b, H:i' != widget.create_date|date:'d b, H:i' %} ({{ widget.modify_date|date:'d b, H:i' }}){% endif %}
-					</cite>
-				</small>
-				<small class="pull-xs-right">
-					<span data-widget="edit" class="edit"><i class="fa fa-pencil"></i>&nbsp;</span>
-					<span data-widget="delete" class="delete"><i class="fa fa-times"></i>&nbsp;</span>
-				</small>
-			</footer>
-		</blockquote>
-	</div>
+    <img src="{{ widget.image }}" class="card-img-top img-fluid"/>
+    <div class="card-block card-inverse text-xs-center card-{{ widget.color }}">
+        <blockquote class="card-blockquote">
+            {{ widget.message|linebreaks }}
+            <footer class="text-xs-left">
+                <small>
+                    <cite title="Дата публикации">
+                        {{ widget.create_date|date:'d b, H:i' }}
+                        {% if widget.modify_date|date:'d b, H:i' != widget.create_date|date:'d b, H:i' %} ({{ widget.modify_date|date:'d b, H:i' }}){% endif %}
+                    </cite>
+                </small>
+                <small class="pull-xs-right">
+                    <span data-widget="edit" class="edit"><i class="fa fa-pencil"></i>&nbsp;</span>
+                    <span data-widget="delete" class="delete"><i class="fa fa-times"></i>&nbsp;</span>
+                </small>
+            </footer>
+        </blockquote>
+    </div>
 </div>

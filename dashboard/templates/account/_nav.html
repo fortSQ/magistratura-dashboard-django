@@ -1,17 +1,17 @@
 <nav class="navbar navbar-full navbar-dark bg-inverse">
-	<div class="container">
-		<button type="button" data-toggle="collapse" data-target="#self" class="navbar-toggler navbar-brand"><i class="fa fa-bars"></i>&nbsp;</button>
-		<ul class="nav navbar-nav">
-			<li class="nav-item"><a href="/" class="nav-link active"><i class="fa fa-user"></i> Моя страница</a></li>
-			<li class="nav-item"><a href="#" data-toggle="modal" data-target="#add_widget" class="nav-link"><i class="fa fa-plus"></i> Добавить виджет</a></li>
-		</ul>
-		<ul class="nav navbar-nav pull-xs-right">
-			<li class="nav-item"><a href="#" data-toggle="modal" data-target="#settings" class="nav-link"><i class="fa fa-cogs"></i> Настройки</a></li>
-			<li class="nav-item"><a href="{% url 'log_out' %}" class="nav-link"><i class="fa fa-sign-out"></i> Выход</a></li>
-		</ul>
-		<form class="form-inline pull-xs-right m-r-3">
-			<input type="text" placeholder="Введи друга..." class="form-control"/>&nbsp;
-			<button type="submit" class="btn btn-secondary-outline">Поиск</button>
-		</form>
-	</div>
+    <div class="container">
+        <button type="button" data-toggle="collapse" data-target="#self" class="navbar-toggler navbar-brand"><i class="fa fa-bars"></i>&nbsp;</button>
+        <ul class="nav navbar-nav">
+            <li class="nav-item"><a href="/" class="nav-link active"><i class="fa fa-user"></i> Моя страница</a></li>
+            <li class="nav-item"><a href="#" data-toggle="modal" data-target="#add_widget" class="nav-link"><i class="fa fa-plus"></i> Добавить виджет</a></li>
+        </ul>
+        <ul class="nav navbar-nav pull-xs-right">
+            <li class="nav-item"><a href="#" data-toggle="modal" data-target="#settings" class="nav-link"><i class="fa fa-cogs"></i> Настройки</a></li>
+            <li class="nav-item"><a href="{% url 'log_out' %}" class="nav-link"><i class="fa fa-sign-out"></i> Выход</a></li>
+        </ul>
+        <form class="form-inline pull-xs-right m-r-3">
+            <input type="text" placeholder="Введи друга..." class="form-control"/>&nbsp;
+            <button type="submit" class="btn btn-secondary-outline">Поиск</button>
+        </form>
+    </div>
 </nav>

@@ -1,31 +1,31 @@
 {% extends 'base.html' %}
 
 {% block content %}
-	{% include 'account/_self.html' %}
-	{% include 'account/_nav.html' %}
-	
-	<section class="container m-t-3">
-		<div class="card-columns">
-			{% for widget in widget_list %}
-				{% include 'widget/item.html' %}
-			{% endfor %}
-		</div>
-	</section>
-	
-	{% include 'account/popup_settings.html' %}
-	
-	{% include 'widget/popup_add.html' %}
-	{% include 'widget/popup_edit.html' %}
-	
-	<script type="text/javascript">
-		$('.card-columns').sortable({
-			distance : 10,
-			opacity: 0.8,
-			cancel: 'blockquote',
-			update: function (event, ui) {
-				var data = $(this).sortable('serialize');
-				$.post('/widget/sort', data);
-			}
-		});
-	</script>
+    {% include 'account/_self.html' %}
+    {% include 'account/_nav.html' %}
+
+    <section class="container m-t-3">
+        <div class="card-columns">
+            {% for widget in widget_list %}
+                {% include 'widget/item.html' %}
+            {% endfor %}
+        </div>
+    </section>
+
+    {% include 'account/popup_settings.html' %}
+
+    {% include 'widget/popup_add.html' %}
+    {% include 'widget/popup_edit.html' %}
+
+    <script type="text/javascript">
+        $('.card-columns').sortable({
+            distance : 10,
+            opacity: 0.8,
+            cancel: 'blockquote',
+            update: function (event, ui) {
+                var data = $(this).sortable('serialize');
+                $.post('/widget/sort', data);
+            }
+        });
+    </script>
 {% endblock content %}
