@@ -1,0 +1,41 @@
+<div id="add_widget" tabindex="-1" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" data-dismiss="modal" class="close"><span>&times;</span></button>
+				<h4 class="modal-title">Добавить виджет</h4>
+			</div>
+			<form name="add_widget">
+				<div class="modal-body">
+					<div class="container-fluid">
+						<fieldset class="form-group row">
+							<label class="col-sm-3 form-control-label">Изображение</label>
+							<div class="col-sm-9">
+								<input type="text" name="image" placeholder="Ссылка на изображение" class="form-control"/>
+							</div>
+						</fieldset>
+						<fieldset class="form-group row">
+							<label class="col-sm-3 form-control-label">Цвет</label>
+							<div class="col-sm-9">
+								<select name="color" class="form-control c-select">
+									<option value="primary" class="bg-primary">Синий</option>
+									<option value="success" class="bg-success">Зеленый</option>
+									<option value="info" class="bg-info">Голубой</option>
+									<option value="warning" class="bg-warning">Желтый</option>
+									<option value="danger" class="bg-danger">Красный</option>
+								</select>
+							</div>
+						</fieldset>
+						<fieldset class="form-group">
+							<label>Текст</label>
+							<textarea name="message" rows="3" required="required" class="form-control"></textarea>
+						</fieldset>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-primary-outline"><i class="fa fa-floppy-o"></i> Добавить</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
